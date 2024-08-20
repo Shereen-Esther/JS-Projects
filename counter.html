@@ -34,8 +34,30 @@
             cursor: pointer;
             background-color: aqua;
         }
-
-        
+        .counter-container {
+            width: 100%;
+            height: 90%;
+            display: flex;
+        }
+        .counter-box {
+            height: 30%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+        p {
+            margin: auto;
+        }
+        .counter-buttons {
+            height: 40%;
+            width: 100%;
+            margin: auto;
+            display: flex;
+        }
+        button {
+            margin: auto;
+        }
     </style>
 </head>
 
@@ -49,7 +71,30 @@
             <li><a href="/form-validation.html">Form Validation</a></li>
         </ul>
     </nav>
-    
+    <div class="counter-container">
+        <div class="counter-box">
+            <p id="output">0</p>
+            <div class="counter-buttons">
+                <button onclick="counter(-1)">Decrease</button>
+                <button onclick="counter(0)">Reset</button>
+                <button onclick="counter(1)">Increase</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let output = document.getElementById("output").innerHTML;
+        function counter(number) {
+            if(number === 0) {
+                output = 0;
+            }
+            if(number === -1) {
+                output-=1;
+            }
+            if(number === 1) {
+                output+=1;
+            }
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
 </body>
-
 </html>
